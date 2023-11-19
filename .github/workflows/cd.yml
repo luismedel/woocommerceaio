@@ -30,7 +30,7 @@ jobs:
         else
           DEPLOY_VERSION=${{ github.event.inputs.version }}
         fi
-        make check-version DEPLOY_VERSION=$DEPLOY_VERSION
+        make version-check DEPLOY_VERSION=$DEPLOY_VERSION
 
     - name: Set up Python
       uses: actions/setup-python@v2
