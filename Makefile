@@ -5,7 +5,7 @@ lint:
 	ruff --version
 	ruff check src/
 	mypy --version
-	mypy --python-version 3.7 src/
+	mypy --python-version 3.8 src/
 
 lint-fix:
 	ruff format src/

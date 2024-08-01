@@ -51,6 +51,7 @@ Check out the WooCommerce API endpoints and data that can be manipulated in http
 | `user_agent` | `string` | no | Set a custom User-Agent, default is `woocommerceaio/<version>` |
 | `oauth_timestamp` | `integer` | no | Custom timestamp for requests made with oAuth1.0a |
 | `wp_api` | `bool` | no | Set to `False` in order to use the legacy WooCommerce API (deprecated) |
+| `compatibility_mode` | `bool` | no | Defaults to `False`. Set to `True` to [bypass some servers' limitations processing HTTP verbs](https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/#_method-or-x-http-method-override-header). |
 
 ## Methods
 

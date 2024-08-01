@@ -21,6 +21,7 @@ class API(object):
         consumer_secret: str,
         max_retries: int = 3,
         timeout: int = 5,
+        compatibility_mode: bool = False,
         **kwargs,
     ):
         self.url = url
@@ -34,6 +35,7 @@ class API(object):
         self.verify_ssl = kwargs.get("verify_ssl", True)
         self.query_string_auth = kwargs.get("query_string_auth", False)
         self.user_agent = kwargs.get("user_agent", f"woocommerceaio/{__version__}")
+        self.compatibility_mode = compatibility_mode
 
     def __is_ssl(self) -> bool:
         """Check if url use HTTPS"""
@@ -79,6 +81,10 @@ class API(object):
         url = self.__get_url(endpoint)
         auth = None
         headers = {"user-agent": f"{self.user_agent}", "accept": "application/json"}
+
+        if self.compatibility_mode and method not in ("GET", "POST"):
+            headers["X-HTTP-Method-Override"] = method
+            method = "POST"
 
         if self.is_ssl is True and self.query_string_auth is False:
             auth = BasicAuth(self.consumer_key, self.consumer_secret)
