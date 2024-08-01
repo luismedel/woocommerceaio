@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- ' compatibility_mode' option in `API` class to to [bypass some servers' limitations processing HTTP verbs](https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/#_method-or-x-http-method-override-header).
+- Drop Python 3.7 support.
+- 'compatibility_mode' option in `API` class to to [bypass some servers' limitations processing HTTP verbs](https://developer.wordpress.org/rest-api/using-the-rest-api/global-parameters/#_method-or-x-http-method-override-header).
 
 ## [1.1.3] - 2023-11-19
 
